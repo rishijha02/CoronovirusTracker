@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+  <head>
+    <title>Good Thymes Virtual Grocery</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+   
+  </head>
+
+  <body>
+  <div class="container">  
+  
+  <h1> Corona Virus Tracker Application</h1>
+  <p> This Application lists the current number of cases reported across the globe</p>
+  <div class="jumbotron">
+  	<h1 class="display-4" th:text="${totalcases}"></h1>
+  	<p class="lead">Total cases reported as of today</p>
+  
+    <table class="table">
+      <tr>
+        <th>State</th>
+        <th>Country</th>
+        <th>Total Cases</th>
+        <th>Difference Since Previous Day</th>
+      </tr>
+      <tr th:each="prod : ${cor}">
+        <td th:text="${prod.state}">Onions</td>
+        <td th:text="${prod.country}">2.41</td>
+        <td th:text="${prod.latestcases}">yes</td>
+        <td th:text="${prod.prvDayDiff}">yes</td>
+        
+      </tr>
+    </table>
+    </div>
+  
+  </body>
+
+</html>
